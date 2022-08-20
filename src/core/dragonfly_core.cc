@@ -1,0 +1,28 @@
+// Copyright 2021, Roman Gershman.  All rights reserved.
+// See LICENSE for licensing terms.
+//
+
+#include "base/logging.h"
+#include "core/intent_lock.h"
+
+#include <absl/base/macros.h>
+
+namespace dfly {
+
+const char* IntentLock::ModeName(Mode m) {
+  switch (m) {
+    case IntentLock::SHARED:
+      return "SHARED";
+    case IntentLock::EXCLUSIVE:
+      return "EXCLUSIVE";
+  }
+  ABSL_INTERNAL_UNREACHABLE;
+}
+
+void IntentLock::VerifyDebug() {
+  constexpr uint32_t kMsb = 1ULL << (sizeof(cnt_[0]) * 8 - 1);
+  DCHECK_EQ(0u, cnt_[0] & kMsb);
+  DCHECK_EQ(0u, cnt_[1] & kMsb);
+}
+
+}  // namespace dfly
