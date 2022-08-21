@@ -19,20 +19,21 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 # PROJECT_NAME=当前project的名称
 project(DRAGONFLY C CXX)
 
-# 设置变量：CMAKE_CXX_STANDARD=17
+# 设置变量：CMAKE_CXX_STANDARD=17，设置C++标准
 set(CMAKE_CXX_STANDARD 17)
 
 # We must define all the required variables from the root cmakefile, otherwise
 # they just disappear.
 
+# CMAKE_CURRENT_SOURCE_DIR是当前路径，也就是根路径
+# 将./helio/cmake设置为CMAKE_MODULE_PATH，如果已经存在CMAKE_MODULE_PATH，也将其添加进CMAKE_MODULE_PATH中
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/helio/cmake" ${CMAKE_MODULE_PATH})
 
-# 设置选项：BUILD_SHARED_LIBS=OFF，"Build shared libraries"为help_text
+# 添加选项：BUILD_SHARED_LIBS默认OFF，"Build shared libraries"为help_text
 option(BUILD_SHARED_LIBS "Build shared libraries" OFF)
 
-# 设置选项：DF_USE_SSL=ON，"Provide support for SSL connections"为help_text
+# 添加选项：DF_USE_SSL默认ON，"Provide support for SSL connections"为help_text
 option(DF_USE_SSL "Provide support for SSL connections" ON)
-
 
 include(third_party)
 include(internal)
