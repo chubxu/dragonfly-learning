@@ -196,6 +196,7 @@ void sigill_hdlr(int signo) {
 }
 
 int main(int argc, char* argv[]) {
+  // 设置帮助报告例程使用的“使用”消息。
   absl::SetProgramUsageMessage(
       R"(a modern in-memory store.
 
@@ -229,11 +230,13 @@ Usage: dragonfly [FLAGS]
   base::sys::KernelVersion kver;
   base::sys::GetKernelVersion(&kver);
 
+  // 校验内核版本号
   if (kver.kernel < 5 || (kver.kernel == 5 && kver.major < 10)) {
     LOG(ERROR) << "Kernel 5.10 or later is supported. Exiting...";
     return 1;
   }
 
+  // io_uring_queue_init_params 初始化 io_uring 功能
   int iouring_res = io_uring_queue_init_params(0, nullptr, nullptr);
   if (-iouring_res == ENOSYS) {
     LOG(ERROR) << "iouring system call interface is not supported. Exiting...";
@@ -281,6 +284,7 @@ Usage: dragonfly [FLAGS]
 
   AcceptServer acceptor(&pp);
 
+  // 运行后端服务器
   int res = dfly::RunEngine(&pp, &acceptor) ? 0 : -1;
 
   pp.Stop();
