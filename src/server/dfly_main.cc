@@ -7,15 +7,24 @@
 #include <mimalloc-new-delete.h>
 #endif
 
+// Abseil flag库允许以编程方式访问通过命令行传递给二进制文件的flag值。
 #include <absl/flags/usage.h>
 #include <absl/flags/usage_config.h>
+// absl/strings 库提供了用于操作和比较字符串的类和实用函数
 #include <absl/strings/match.h>
 #include <absl/strings/str_cat.h>
 #include <absl/strings/strip.h>
+
+// 这是 io_uring 库
 #include <liburing.h>
+
+// 它是 malloc 的直接替代品，可以在其他程序中使用而无需更改代码
 #include <mimalloc.h>
+
+// signal.h是C标准函数库中的信号处理部分， 定义了程序执行时如何处理不同的信号。信号用作进程间通信， 报告异常行为（如除零）、用户的一些按键组合（如同时按下Ctrl与C键，产生信号SIGINT）。
 #include <signal.h>
 
+// 以下文件来自于helio和src目录下
 #include "base/init.h"
 #include "base/proc_util.h"  // for GetKernelVersion
 #include "facade/dragonfly_listener.h"
