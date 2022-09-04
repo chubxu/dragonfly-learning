@@ -4,6 +4,7 @@
 
 #pragma once
 
+// 以下头文件全局来自src、helio
 #include "base/varz_value.h"
 #include "facade/service_interface.h"
 #include "server/command_registry.h"
@@ -25,9 +26,7 @@ class Service : public facade::ServiceInterface {
   using error_code = std::error_code;
   struct InitOpts {
     bool disable_time_update;
-
-    InitOpts() : disable_time_update{false} {
-    }
+    InitOpts() : disable_time_update{false} {}
   };
 
   explicit Service(util::ProactorPool* pp);

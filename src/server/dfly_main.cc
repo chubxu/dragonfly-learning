@@ -40,11 +40,13 @@
 
 using namespace std;
 
+// 声明启动文件接收的参数，声明后可全局使用
 ABSL_DECLARE_FLAG(uint32_t, port);
 ABSL_DECLARE_FLAG(uint32_t, dbnum);
 ABSL_DECLARE_FLAG(uint32_t, memcache_port);
 ABSL_DECLARE_FLAG(uint64_t, maxmemory);
 
+// 定义全局flag
 ABSL_FLAG(bool, use_large_pages, false, "If true - uses large memory pages for allocations");
 ABSL_FLAG(string, bind, "",
           "Bind address. If empty - binds on all interfaces. "
@@ -62,136 +64,141 @@ using absl::StrCat;
 using strings::HumanReadableNumBytes;
 
 namespace dfly {
+  namespace {
 
-namespace {
+    enum class TermColor { 
+      kDefault, 
+      kRed, 
+      kGreen, 
+      kYellow 
+    };
 
-enum class TermColor { kDefault, kRed, kGreen, kYellow };
-// Returns the ANSI color code for the given color. TermColor::kDefault is
-// an invalid input.
-static const char* GetAnsiColorCode(TermColor color) {
-  switch (color) {
-    case TermColor::kRed:
-      return "1";
-    case TermColor::kGreen:
-      return "2";
-    case TermColor::kYellow:
-      return "3";
-    default:
-      return nullptr;
-  }
-}
-
-string ColorStart(TermColor color) {
-  return StrCat("\033[0;3", GetAnsiColorCode(color), "m");
-}
-
-// Resets the terminal to default.
-const char kColorEnd[] = "\033[m";
-
-string ColoredStr(TermColor color, string_view str) {
-  return StrCat(ColorStart(color), str, kColorEnd);
-}
-
-bool HelpshortFlags(std::string_view f) {
-  return absl::StartsWith(f, "\033[0;32");
-}
-
-bool HelpFlags(std::string_view f) {
-  return absl::StartsWith(f, "\033[0;3");
-}
-
-string NormalizePaths(std::string_view path) {
-  if (absl::ConsumePrefix(&path, "../src/"))
-    return ColoredStr(TermColor::kGreen, path);
-
-  if (absl::ConsumePrefix(&path, "../"))
-    return ColoredStr(TermColor::kYellow, path);
-
-  if (absl::ConsumePrefix(&path, "_deps/"))
-    return string(path);
-
-  return string(path);
-}
-
-bool RunEngine(ProactorPool* pool, AcceptServer* acceptor) {
-  auto maxmemory = GetFlag(FLAGS_maxmemory);
-
-  if (maxmemory > 0 && maxmemory < pool->size() * 256_MB) {
-    LOG(ERROR) << "Max memory is less than 256MB per thread. Exiting...";
-    return false;
-  }
-
-  Service service(pool);
-
-  Listener* main_listener = new Listener{Protocol::REDIS, &service};
-
-  Service::InitOpts opts;
-  opts.disable_time_update = false;
-  service.Init(acceptor, main_listener, opts);
-  const auto& bind = GetFlag(FLAGS_bind);
-  const char* bind_addr = bind.empty() ? nullptr : bind.c_str();
-  auto port = GetFlag(FLAGS_port);
-  auto mc_port = GetFlag(FLAGS_memcache_port);
-  string unix_sock = GetFlag(FLAGS_unixsocket);
-  bool unlink_uds = false;
-
-  if (!unix_sock.empty()) {
-    unlink(unix_sock.c_str());
-
-    Listener* uds_listener = new Listener{Protocol::REDIS, &service};
-    error_code ec = acceptor->AddUDSListener(unix_sock.c_str(), uds_listener);
-    if (ec) {
-      LOG(WARNING) << "Could not open unix socket " << unix_sock << ", error " << ec;
-      delete uds_listener;
-    } else {
-      LOG(INFO) << "Listening on unix socket " << unix_sock;
-      unlink_uds = true;
+    // 获取颜色编码
+    // 在bash中: \033[0;31m、\033[0;32m、\033[0;33m分别代表红色、绿色、黄色编码
+    // 可以通过如下代码 yellow='\033[0;33m'; echo -e '${yellow}hello'; 输出具有颜色的文本
+    static const char* GetAnsiColorCode(TermColor color) {
+      switch (color) {
+        case TermColor::kRed:
+          return "1";
+        case TermColor::kGreen:
+          return "2";
+        case TermColor::kYellow:
+          return "3";
+        default:
+          return nullptr;
+      }
     }
-  }
+    string ColorStart(TermColor color) {
+      return StrCat("\033[0;3", GetAnsiColorCode(color), "m");
+    }
+    // 重置终端颜色为默认颜色
+    const char kColorEnd[] = "\033[m";
+    // 获取有颜色的文本
+    string ColoredStr(TermColor color, string_view str) {
+      return StrCat(ColorStart(color), str, kColorEnd);
+    }
 
-  error_code ec = acceptor->AddListener(bind_addr, port, main_listener);
+    bool HelpshortFlags(std::string_view f) {
+      return absl::StartsWith(f, "\033[0;32");
+    }
 
-  LOG_IF(FATAL, ec) << "Could not open port " << port << ", error: " << ec.message();
+    bool HelpFlags(std::string_view f) {
+      return absl::StartsWith(f, "\033[0;3");
+    }
 
-  if (mc_port > 0) {
-    acceptor->AddListener(mc_port, new Listener{Protocol::MEMCACHE, &service});
-  }
+    string NormalizePaths(std::string_view path) {
+      if (absl::ConsumePrefix(&path, "../src/"))
+        return ColoredStr(TermColor::kGreen, path);
 
-  acceptor->Run();
-  acceptor->Wait();
+      if (absl::ConsumePrefix(&path, "../"))
+        return ColoredStr(TermColor::kYellow, path);
 
-  service.Shutdown();
+      if (absl::ConsumePrefix(&path, "_deps/"))
+        return string(path);
 
-  if (unlink_uds) {
-    unlink(unix_sock.c_str());
-  }
+      return string(path);
+    }
 
-  return true;
-}
+    bool RunEngine(ProactorPool* pool, AcceptServer* acceptor) {
+      auto maxmemory = GetFlag(FLAGS_maxmemory);
 
-bool CreatePidFile(const string& path) {
-  Result<WriteFile*> res = OpenWrite(path);
-  if (!res) {
-    LOG(ERROR) << "Failed to open pidfile with error: " << res.error().message() << ". Exiting...";
-    return false;
-  }
+      if (maxmemory > 0 && maxmemory < pool->size() * 256_MB) {
+        LOG(ERROR) << "Max memory is less than 256MB per thread. Exiting...";
+        return false;
+      }
 
-  unique_ptr<WriteFile> wf(res.value());
-  auto ec = wf->Write(to_string(getpid()));
-  if (ec) {
-    LOG(ERROR) << "Failed to write pid into pidfile with error: " << ec.message() << ". Exiting...";
-    return false;
-  }
+      Service service(pool);
 
-  ec = wf->Close();
-  if (ec) {
-    LOG(WARNING) << "Failed to close pidfile file descriptor with error: " << ec.message() << ".";
-  }
+      Listener* main_listener = new Listener{Protocol::REDIS, &service};
 
-  return true;
-}
+      Service::InitOpts opts;
+      opts.disable_time_update = false;
+      service.Init(acceptor, main_listener, opts);
+      const auto& bind = GetFlag(FLAGS_bind);
+      const char* bind_addr = bind.empty() ? nullptr : bind.c_str();
+      auto port = GetFlag(FLAGS_port);
+      auto mc_port = GetFlag(FLAGS_memcache_port);
+      string unix_sock = GetFlag(FLAGS_unixsocket);
+      bool unlink_uds = false;
 
-}  // namespace
+      if (!unix_sock.empty()) {
+        unlink(unix_sock.c_str());
+
+        Listener* uds_listener = new Listener{Protocol::REDIS, &service};
+        error_code ec = acceptor->AddUDSListener(unix_sock.c_str(), uds_listener);
+        if (ec) {
+          LOG(WARNING) << "Could not open unix socket " << unix_sock << ", error " << ec;
+          delete uds_listener;
+        } else {
+          LOG(INFO) << "Listening on unix socket " << unix_sock;
+          unlink_uds = true;
+        }
+      }
+
+      error_code ec = acceptor->AddListener(bind_addr, port, main_listener);
+
+      LOG_IF(FATAL, ec) << "Could not open port " << port << ", error: " << ec.message();
+
+      if (mc_port > 0) {
+        acceptor->AddListener(mc_port, new Listener{Protocol::MEMCACHE, &service});
+      }
+
+      acceptor->Run();
+      acceptor->Wait();
+
+      service.Shutdown();
+
+      if (unlink_uds) {
+        unlink(unix_sock.c_str());
+      }
+
+      return true;
+    }
+
+    bool CreatePidFile(const string& path) {
+      Result<WriteFile*> res = OpenWrite(path);
+      if (!res) {
+        LOG(ERROR) << "Failed to open pidfile with error: " << res.error().message() << ". Exiting...";
+        return false;
+      }
+
+      unique_ptr<WriteFile> wf(res.value());
+      auto ec = wf->Write(to_string(getpid()));
+      if (ec) {
+        LOG(ERROR) << "Failed to write pid into pidfile with error: " << ec.message() << ". Exiting...";
+        return false;
+      }
+
+      ec = wf->Close();
+      if (ec) {
+        LOG(WARNING) << "Failed to close pidfile file descriptor with error: " << ec.message() << ".";
+      }
+
+      return true;
+    }
+
+  }  // namespace
+
 }  // namespace dfly
 
 extern "C" void _mi_options_init();
