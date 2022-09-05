@@ -183,6 +183,7 @@ namespace dfly {
       }
 
       unique_ptr<WriteFile> wf(res.value());
+      // 写入pid
       auto ec = wf->Write(to_string(getpid()));
       if (ec) {
         LOG(ERROR) << "Failed to write pid into pidfile with error: " << ec.message() << ". Exiting...";
@@ -233,6 +234,7 @@ Usage: dragonfly [FLAGS]
 
   MainInitGuard guard(&argc, &argv);
 
+  // 输出版本号日志
   LOG(INFO) << "Starting dragonfly " << GetVersion() << "-" << kGitSha;
 
   struct sigaction act;
@@ -246,7 +248,7 @@ Usage: dragonfly [FLAGS]
   base::sys::KernelVersion kver;
   base::sys::GetKernelVersion(&kver);
 
-  // 校验内核版本号
+  // 校验内核版本号，不了解的可以搜下Linux内核版本号的定义规则
   if (kver.kernel < 5 || (kver.kernel == 5 && kver.major < 10)) {
     LOG(ERROR) << "Kernel 5.10 or later is supported. Exiting...";
     return 1;
@@ -258,27 +260,31 @@ Usage: dragonfly [FLAGS]
     LOG(ERROR) << "iouring system call interface is not supported. Exiting...";
     return 1;
   }
-
+  // 校验DB数量，最大1024
   if (GetFlag(FLAGS_dbnum) > dfly::kMaxDbId) {
     LOG(ERROR) << "dbnum is too big. Exiting...";
     return 1;
   }
 
+  // 校验内核版本号
   CHECK_LT(kver.major, 99u);
   dfly::kernel_version = kver.kernel * 100 + kver.major;
 
+  // 判断pidfile参数是否存在
   string pidfile_path = GetFlag(FLAGS_pidfile);
   if (!pidfile_path.empty()) {
+    // 参数存在则创建文件，并写入pid，如果创建失败则直接返回
     if (!CreatePidFile(pidfile_path)) {
       return 1;
     }
   }
-
+  // 判断最大内存参数
   if (GetFlag(FLAGS_maxmemory) == 0) {
     LOG(INFO) << "maxmemory has not been specified. Deciding myself....";
-
+    // 读取内存信息
     Result<MemInfoData> res = ReadMemInfo();
     size_t available = res->mem_avail;
+    // 使用80%的可用内存作为dragonfly的最大内存
     size_t maxmemory = size_t(0.8 * available);
     LOG(INFO) << "Found " << HumanReadableNumBytes(available)
               << " available memory. Setting maxmemory to " << HumanReadableNumBytes(maxmemory);
@@ -286,16 +292,19 @@ Usage: dragonfly [FLAGS]
   } else {
     LOG(INFO) << "Max memory limit is: " << HumanReadableNumBytes(GetFlag(FLAGS_maxmemory));
   }
-
+  // 设置最大内存
   dfly::max_memory_limit = GetFlag(FLAGS_maxmemory);
-
+  // 如果设置了使用大页
   if (GetFlag(FLAGS_use_large_pages)) {
     mi_option_enable(mi_option_large_os_pages);
   }
   mi_option_enable(mi_option_show_errors);
   mi_option_set(mi_option_max_warnings, 0);
 
+  // 创建一个 ring_depth=1024 的io_uring pool，pool size跟随系统
   uring::UringPool pp{1024};
+
+  // 运行 io_uring pool
   pp.Run();
 
   AcceptServer acceptor(&pp);

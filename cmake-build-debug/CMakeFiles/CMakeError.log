@@ -1,0 +1,694 @@
+Determining if the include file pthread.h exists failed with the following output:
+Change Dir: H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/MinGW/bin/mingw32-make.exe cmTC_51cb2/fast && F:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_51cb2.dir\build.make CMakeFiles/cmTC_51cb2.dir/build
+mingw32-make.exe[1]: Entering directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_51cb2.dir/CheckIncludeFile.c.obj
+F:\MinGW\bin\gcc.exe    -o CMakeFiles\cmTC_51cb2.dir\CheckIncludeFile.c.obj   -c H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CMakeTmp\CheckIncludeFile.c:1:10: fatal error: pthread.h: No such file or directory
+    1 | #include <pthread.h>
+      |          ^~~~~~~~~~~
+compilation terminated.
+CMakeFiles\cmTC_51cb2.dir\build.make:64: recipe for target 'CMakeFiles/cmTC_51cb2.dir/CheckIncludeFile.c.obj' failed
+mingw32-make.exe[1]: *** [CMakeFiles/cmTC_51cb2.dir/CheckIncludeFile.c.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:120: recipe for target 'cmTC_51cb2/fast' failed
+mingw32-make.exe: *** [cmTC_51cb2/fast] Error 2
+
+
+
+Determining if the function shm_open exists in the rt failed with the following output:
+Change Dir: H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/MinGW/bin/mingw32-make.exe cmTC_4ace0/fast && F:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_4ace0.dir\build.make CMakeFiles/cmTC_4ace0.dir/build
+mingw32-make.exe[1]: Entering directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4ace0.dir/CheckFunctionExists.c.obj
+F:\MinGW\bin\gcc.exe   -DCHECK_FUNCTION_EXISTS=shm_open   -o CMakeFiles\cmTC_4ace0.dir\CheckFunctionExists.c.obj   -c "F:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\share\cmake-3.16\Modules\CheckFunctionExists.c"
+Linking C executable cmTC_4ace0.exe
+"F:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_4ace0.dir\link.txt --verbose=1
+"F:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_4ace0.dir/objects.a
+F:\MinGW\bin\ar.exe cr CMakeFiles\cmTC_4ace0.dir/objects.a @CMakeFiles\cmTC_4ace0.dir\objects1.rsp
+F:\MinGW\bin\gcc.exe  -DCHECK_FUNCTION_EXISTS=shm_open    -Wl,--whole-archive CMakeFiles\cmTC_4ace0.dir/objects.a -Wl,--no-whole-archive  -o cmTC_4ace0.exe -Wl,--out-implib,libcmTC_4ace0.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_4ace0.dir\linklibs.rsp
+f:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot find -lrt
+collect2.exe: error: ld returned 1 exit status
+CMakeFiles\cmTC_4ace0.dir\build.make:87: recipe for target 'cmTC_4ace0.exe' failed
+mingw32-make.exe[1]: *** [cmTC_4ace0.exe] Error 1
+mingw32-make.exe[1]: Leaving directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:120: recipe for target 'cmTC_4ace0/fast' failed
+mingw32-make.exe: *** [cmTC_4ace0/fast] Error 2
+
+
+
+Performing C++ SOURCE FILE Test HAVE_CXX_FLAG_WSHORTEN_64_TO_32 failed with the following output:
+Change Dir: H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/MinGW/bin/mingw32-make.exe cmTC_65059/fast && F:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_65059.dir\build.make CMakeFiles/cmTC_65059.dir/build
+mingw32-make.exe[1]: Entering directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_65059.dir/src.cxx.obj
+F:\MinGW\bin\g++.exe    -std=c++11  -Wall  -Wextra  -Wshadow  -Wsuggest-override  -pedantic  -pedantic-errors -DHAVE_CXX_FLAG_WSHORTEN_64_TO_32  -Wshorten-64-to-32   -Wshorten-64-to-32 -o CMakeFiles\cmTC_65059.dir\src.cxx.obj -c H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CMakeTmp\src.cxx
+g++.exe: error: unrecognized command line option '-Wshorten-64-to-32'
+g++.exe: error: unrecognized command line option '-Wshorten-64-to-32'
+CMakeFiles\cmTC_65059.dir\build.make:64: recipe for target 'CMakeFiles/cmTC_65059.dir/src.cxx.obj' failed
+mingw32-make.exe[1]: *** [CMakeFiles/cmTC_65059.dir/src.cxx.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:120: recipe for target 'cmTC_65059/fast' failed
+mingw32-make.exe: *** [cmTC_65059/fast] Error 2
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test HAVE_CXX_FLAG_WD654 failed with the following output:
+Change Dir: H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/MinGW/bin/mingw32-make.exe cmTC_f800a/fast && F:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_f800a.dir\build.make CMakeFiles/cmTC_f800a.dir/build
+mingw32-make.exe[1]: Entering directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_f800a.dir/src.cxx.obj
+F:\MinGW\bin\g++.exe    -std=c++11  -Wall  -Wextra  -Wshadow  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wstrict-aliasing -DHAVE_CXX_FLAG_WD654  -wd654   -wd654 -o CMakeFiles\cmTC_f800a.dir\src.cxx.obj -c H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CMakeTmp\src.cxx
+g++.exe: error: unrecognized command line option '-wd654'
+g++.exe: error: unrecognized command line option '-wd654'
+CMakeFiles\cmTC_f800a.dir\build.make:64: recipe for target 'CMakeFiles/cmTC_f800a.dir/src.cxx.obj' failed
+mingw32-make.exe[1]: *** [CMakeFiles/cmTC_f800a.dir/src.cxx.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:120: recipe for target 'cmTC_f800a/fast' failed
+mingw32-make.exe: *** [cmTC_f800a/fast] Error 2
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test HAVE_CXX_FLAG_WTHREAD_SAFETY failed with the following output:
+Change Dir: H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/MinGW/bin/mingw32-make.exe cmTC_565a9/fast && F:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_565a9.dir\build.make CMakeFiles/cmTC_565a9.dir/build
+mingw32-make.exe[1]: Entering directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_565a9.dir/src.cxx.obj
+F:\MinGW\bin\g++.exe    -std=c++11  -Wall  -Wextra  -Wshadow  -Wsuggest-override  -pedantic  -pedantic-errors  -fstrict-aliasing  -Wno-deprecated-declarations  -Wstrict-aliasing -DHAVE_CXX_FLAG_WTHREAD_SAFETY  -Wthread-safety   -Wthread-safety -o CMakeFiles\cmTC_565a9.dir\src.cxx.obj -c H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CMakeTmp\src.cxx
+g++.exe: error: unrecognized command line option '-Wthread-safety'
+g++.exe: error: unrecognized command line option '-Wthread-safety'
+CMakeFiles\cmTC_565a9.dir\build.make:64: recipe for target 'CMakeFiles/cmTC_565a9.dir/src.cxx.obj' failed
+mingw32-make.exe[1]: *** [CMakeFiles/cmTC_565a9.dir/src.cxx.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:120: recipe for target 'cmTC_565a9/fast' failed
+mingw32-make.exe: *** [cmTC_565a9/fast] Error 2
+
+
+Source file was:
+int main() { return 0; }
+Determining if the function pfm_initialize exists in the libpfm.a failed with the following output:
+Change Dir: H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/MinGW/bin/mingw32-make.exe cmTC_e2cb4/fast && F:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_e2cb4.dir\build.make CMakeFiles/cmTC_e2cb4.dir/build
+mingw32-make.exe[1]: Entering directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e2cb4.dir/CheckFunctionExists.c.obj
+F:\MinGW\bin\gcc.exe   -DCHECK_FUNCTION_EXISTS=pfm_initialize   -o CMakeFiles\cmTC_e2cb4.dir\CheckFunctionExists.c.obj   -c "F:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\share\cmake-3.16\Modules\CheckFunctionExists.c"
+Linking C executable cmTC_e2cb4.exe
+"F:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_e2cb4.dir\link.txt --verbose=1
+"F:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_e2cb4.dir/objects.a
+F:\MinGW\bin\ar.exe cr CMakeFiles\cmTC_e2cb4.dir/objects.a @CMakeFiles\cmTC_e2cb4.dir\objects1.rsp
+F:\MinGW\bin\gcc.exe  -DCHECK_FUNCTION_EXISTS=pfm_initialize    -Wl,--whole-archive CMakeFiles\cmTC_e2cb4.dir/objects.a -Wl,--no-whole-archive  -o cmTC_e2cb4.exe -Wl,--out-implib,libcmTC_e2cb4.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_e2cb4.dir\linklibs.rsp
+f:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot find -lpfm
+collect2.exe: error: ld returned 1 exit status
+CMakeFiles\cmTC_e2cb4.dir\build.make:87: recipe for target 'cmTC_e2cb4.exe' failed
+mingw32-make.exe[1]: *** [cmTC_e2cb4.exe] Error 1
+mingw32-make.exe[1]: Leaving directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:120: recipe for target 'cmTC_e2cb4/fast' failed
+mingw32-make.exe: *** [cmTC_e2cb4/fast] Error 2
+
+
+
+Determining if the include file execinfo.h exists failed with the following output:
+Change Dir: H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/MinGW/bin/mingw32-make.exe cmTC_f9036/fast && F:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_f9036.dir\build.make CMakeFiles/cmTC_f9036.dir/build
+mingw32-make.exe[1]: Entering directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_f9036.dir/CheckIncludeFile.cxx.obj
+F:\MinGW\bin\g++.exe    -std=gnu++17 -o CMakeFiles\cmTC_f9036.dir\CheckIncludeFile.cxx.obj -c H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx
+H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx:1:10: fatal error: execinfo.h: No such file or directory
+    1 | #include <execinfo.h>
+      |          ^~~~~~~~~~~~
+compilation terminated.
+CMakeFiles\cmTC_f9036.dir\build.make:64: recipe for target 'CMakeFiles/cmTC_f9036.dir/CheckIncludeFile.cxx.obj' failed
+mingw32-make.exe[1]: *** [CMakeFiles/cmTC_f9036.dir/CheckIncludeFile.cxx.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:120: recipe for target 'cmTC_f9036/fast' failed
+mingw32-make.exe: *** [cmTC_f9036/fast] Error 2
+
+
+
+Determining if the include file pwd.h exists failed with the following output:
+Change Dir: H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/MinGW/bin/mingw32-make.exe cmTC_a9194/fast && F:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_a9194.dir\build.make CMakeFiles/cmTC_a9194.dir/build
+mingw32-make.exe[1]: Entering directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_a9194.dir/CheckIncludeFile.cxx.obj
+F:\MinGW\bin\g++.exe    -std=gnu++17 -o CMakeFiles\cmTC_a9194.dir\CheckIncludeFile.cxx.obj -c H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx
+H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx:1:10: fatal error: pwd.h: No such file or directory
+    1 | #include <pwd.h>
+      |          ^~~~~~~
+compilation terminated.
+CMakeFiles\cmTC_a9194.dir\build.make:64: recipe for target 'CMakeFiles/cmTC_a9194.dir/CheckIncludeFile.cxx.obj' failed
+mingw32-make.exe[1]: *** [CMakeFiles/cmTC_a9194.dir/CheckIncludeFile.cxx.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:120: recipe for target 'cmTC_a9194/fast' failed
+mingw32-make.exe: *** [cmTC_a9194/fast] Error 2
+
+
+
+Determining if the include file sys/syscall.h exists failed with the following output:
+Change Dir: H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/MinGW/bin/mingw32-make.exe cmTC_f0c85/fast && F:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_f0c85.dir\build.make CMakeFiles/cmTC_f0c85.dir/build
+mingw32-make.exe[1]: Entering directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_f0c85.dir/CheckIncludeFile.cxx.obj
+F:\MinGW\bin\g++.exe    -std=gnu++17 -o CMakeFiles\cmTC_f0c85.dir\CheckIncludeFile.cxx.obj -c H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx
+H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx:1:10: fatal error: sys/syscall.h: No such file or directory
+    1 | #include <sys/syscall.h>
+      |          ^~~~~~~~~~~~~~~
+compilation terminated.
+CMakeFiles\cmTC_f0c85.dir\build.make:64: recipe for target 'CMakeFiles/cmTC_f0c85.dir/CheckIncludeFile.cxx.obj' failed
+mingw32-make.exe[1]: *** [CMakeFiles/cmTC_f0c85.dir/CheckIncludeFile.cxx.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:120: recipe for target 'cmTC_f0c85/fast' failed
+mingw32-make.exe: *** [cmTC_f0c85/fast] Error 2
+
+
+
+Determining if the include file sys/utsname.h exists failed with the following output:
+Change Dir: H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/MinGW/bin/mingw32-make.exe cmTC_a16c9/fast && F:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_a16c9.dir\build.make CMakeFiles/cmTC_a16c9.dir/build
+mingw32-make.exe[1]: Entering directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_a16c9.dir/CheckIncludeFile.cxx.obj
+F:\MinGW\bin\g++.exe    -std=gnu++17 -o CMakeFiles\cmTC_a16c9.dir\CheckIncludeFile.cxx.obj -c H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx
+H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx:1:10: fatal error: sys/utsname.h: No such file or directory
+    1 | #include <sys/utsname.h>
+      |          ^~~~~~~~~~~~~~~
+compilation terminated.
+CMakeFiles\cmTC_a16c9.dir\build.make:64: recipe for target 'CMakeFiles/cmTC_a16c9.dir/CheckIncludeFile.cxx.obj' failed
+mingw32-make.exe[1]: *** [CMakeFiles/cmTC_a16c9.dir/CheckIncludeFile.cxx.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:120: recipe for target 'cmTC_a16c9/fast' failed
+mingw32-make.exe: *** [cmTC_a16c9/fast] Error 2
+
+
+
+Determining if the include file sys/wait.h exists failed with the following output:
+Change Dir: H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/MinGW/bin/mingw32-make.exe cmTC_1107e/fast && F:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_1107e.dir\build.make CMakeFiles/cmTC_1107e.dir/build
+mingw32-make.exe[1]: Entering directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_1107e.dir/CheckIncludeFile.cxx.obj
+F:\MinGW\bin\g++.exe    -std=gnu++17 -o CMakeFiles\cmTC_1107e.dir\CheckIncludeFile.cxx.obj -c H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx
+H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx:1:10: fatal error: sys/wait.h: No such file or directory
+    1 | #include <sys/wait.h>
+      |          ^~~~~~~~~~~~
+compilation terminated.
+CMakeFiles\cmTC_1107e.dir\build.make:64: recipe for target 'CMakeFiles/cmTC_1107e.dir/CheckIncludeFile.cxx.obj' failed
+mingw32-make.exe[1]: *** [CMakeFiles/cmTC_1107e.dir/CheckIncludeFile.cxx.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:120: recipe for target 'cmTC_1107e/fast' failed
+mingw32-make.exe: *** [cmTC_1107e/fast] Error 2
+
+
+
+Determining if the include file syscall.h exists failed with the following output:
+Change Dir: H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/MinGW/bin/mingw32-make.exe cmTC_04cca/fast && F:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_04cca.dir\build.make CMakeFiles/cmTC_04cca.dir/build
+mingw32-make.exe[1]: Entering directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_04cca.dir/CheckIncludeFile.cxx.obj
+F:\MinGW\bin\g++.exe    -std=gnu++17 -o CMakeFiles\cmTC_04cca.dir\CheckIncludeFile.cxx.obj -c H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx
+H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx:1:10: fatal error: syscall.h: No such file or directory
+    1 | #include <syscall.h>
+      |          ^~~~~~~~~~~
+compilation terminated.
+CMakeFiles\cmTC_04cca.dir\build.make:64: recipe for target 'CMakeFiles/cmTC_04cca.dir/CheckIncludeFile.cxx.obj' failed
+mingw32-make.exe[1]: *** [CMakeFiles/cmTC_04cca.dir/CheckIncludeFile.cxx.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:120: recipe for target 'cmTC_04cca/fast' failed
+mingw32-make.exe: *** [cmTC_04cca/fast] Error 2
+
+
+
+Determining if the include file syslog.h exists failed with the following output:
+Change Dir: H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/MinGW/bin/mingw32-make.exe cmTC_c49ef/fast && F:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_c49ef.dir\build.make CMakeFiles/cmTC_c49ef.dir/build
+mingw32-make.exe[1]: Entering directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_c49ef.dir/CheckIncludeFile.cxx.obj
+F:\MinGW\bin\g++.exe    -std=gnu++17 -o CMakeFiles\cmTC_c49ef.dir\CheckIncludeFile.cxx.obj -c H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx
+H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx:1:10: fatal error: syslog.h: No such file or directory
+    1 | #include <syslog.h>
+      |          ^~~~~~~~~~
+compilation terminated.
+CMakeFiles\cmTC_c49ef.dir\build.make:64: recipe for target 'CMakeFiles/cmTC_c49ef.dir/CheckIncludeFile.cxx.obj' failed
+mingw32-make.exe[1]: *** [CMakeFiles/cmTC_c49ef.dir/CheckIncludeFile.cxx.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:120: recipe for target 'cmTC_c49ef/fast' failed
+mingw32-make.exe: *** [cmTC_c49ef/fast] Error 2
+
+
+
+Determining if the include file ucontext.h exists failed with the following output:
+Change Dir: H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/MinGW/bin/mingw32-make.exe cmTC_be731/fast && F:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_be731.dir\build.make CMakeFiles/cmTC_be731.dir/build
+mingw32-make.exe[1]: Entering directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_be731.dir/CheckIncludeFile.cxx.obj
+F:\MinGW\bin\g++.exe    -std=gnu++17 -o CMakeFiles\cmTC_be731.dir\CheckIncludeFile.cxx.obj -c H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx
+H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CMakeTmp\CheckIncludeFile.cxx:1:10: fatal error: ucontext.h: No such file or directory
+    1 | #include <ucontext.h>
+      |          ^~~~~~~~~~~~
+compilation terminated.
+CMakeFiles\cmTC_be731.dir\build.make:64: recipe for target 'CMakeFiles/cmTC_be731.dir/CheckIncludeFile.cxx.obj' failed
+mingw32-make.exe[1]: *** [CMakeFiles/cmTC_be731.dir/CheckIncludeFile.cxx.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:120: recipe for target 'cmTC_be731/fast' failed
+mingw32-make.exe: *** [cmTC_be731/fast] Error 2
+
+
+
+Determining size of u_int16_t failed with the following output:
+Change Dir: H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/MinGW/bin/mingw32-make.exe cmTC_78eb8/fast && F:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_78eb8.dir\build.make CMakeFiles/cmTC_78eb8.dir/build
+mingw32-make.exe[1]: Entering directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_78eb8.dir/HAVE_U_INT16_T.cpp.obj
+F:\MinGW\bin\g++.exe    -std=gnu++17 -o CMakeFiles\cmTC_78eb8.dir\HAVE_U_INT16_T.cpp.obj -c H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CheckTypeSize\HAVE_U_INT16_T.cpp
+H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CheckTypeSize\HAVE_U_INT16_T.cpp:23:22: error: 'u_int16_t' was not declared in this scope; did you mean 'uint16_t'?
+   23 | #define SIZE (sizeof(u_int16_t))
+      |                      ^~~~~~~~~
+H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CheckTypeSize\HAVE_U_INT16_T.cpp:25:12: note: in expansion of macro 'SIZE'
+   25 |   ('0' + ((SIZE / 10000)%10)),
+      |            ^~~~
+H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CheckTypeSize\HAVE_U_INT16_T.cpp:23:22: error: 'u_int16_t' was not declared in this scope; did you mean 'uint16_t'?
+   23 | #define SIZE (sizeof(u_int16_t))
+      |                      ^~~~~~~~~
+H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CheckTypeSize\HAVE_U_INT16_T.cpp:26:12: note: in expansion of macro 'SIZE'
+   26 |   ('0' + ((SIZE / 1000)%10)),
+      |            ^~~~
+H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CheckTypeSize\HAVE_U_INT16_T.cpp:23:22: error: 'u_int16_t' was not declared in this scope; did you mean 'uint16_t'?
+   23 | #define SIZE (sizeof(u_int16_t))
+      |                      ^~~~~~~~~
+H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CheckTypeSize\HAVE_U_INT16_T.cpp:27:12: note: in expansion of macro 'SIZE'
+   27 |   ('0' + ((SIZE / 100)%10)),
+      |            ^~~~
+H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CheckTypeSize\HAVE_U_INT16_T.cpp:23:22: error: 'u_int16_t' was not declared in this scope; did you mean 'uint16_t'?
+   23 | #define SIZE (sizeof(u_int16_t))
+      |                      ^~~~~~~~~
+H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CheckTypeSize\HAVE_U_INT16_T.cpp:28:12: note: in expansion of macro 'SIZE'
+   28 |   ('0' + ((SIZE / 10)%10)),
+      |            ^~~~
+H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CheckTypeSize\HAVE_U_INT16_T.cpp:23:22: error: 'u_int16_t' was not declared in this scope; did you mean 'uint16_t'?
+   23 | #define SIZE (sizeof(u_int16_t))
+      |                      ^~~~~~~~~
+H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CheckTypeSize\HAVE_U_INT16_T.cpp:29:12: note: in expansion of macro 'SIZE'
+   29 |   ('0' +  (SIZE    % 10)),
+      |            ^~~~
+CMakeFiles\cmTC_78eb8.dir\build.make:64: recipe for target 'CMakeFiles/cmTC_78eb8.dir/HAVE_U_INT16_T.cpp.obj' failed
+mingw32-make.exe[1]: *** [CMakeFiles/cmTC_78eb8.dir/HAVE_U_INT16_T.cpp.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:120: recipe for target 'cmTC_78eb8/fast' failed
+mingw32-make.exe: *** [cmTC_78eb8/fast] Error 2
+
+
+H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CheckTypeSize/HAVE_U_INT16_T.cpp:
+#include <sys/types.h>
+#include <stdint.h>
+#include <stddef.h>
+
+
+#undef KEY
+#if defined(__i386)
+# define KEY '_','_','i','3','8','6'
+#elif defined(__x86_64)
+# define KEY '_','_','x','8','6','_','6','4'
+#elif defined(__ppc__)
+# define KEY '_','_','p','p','c','_','_'
+#elif defined(__ppc64__)
+# define KEY '_','_','p','p','c','6','4','_','_'
+#elif defined(__aarch64__)
+# define KEY '_','_','a','a','r','c','h','6','4','_','_'
+#elif defined(__ARM_ARCH_7A__)
+# define KEY '_','_','A','R','M','_','A','R','C','H','_','7','A','_','_'
+#elif defined(__ARM_ARCH_7S__)
+# define KEY '_','_','A','R','M','_','A','R','C','H','_','7','S','_','_'
+#endif
+
+#define SIZE (sizeof(u_int16_t))
+static char info_size[] =  {'I', 'N', 'F', 'O', ':', 's','i','z','e','[',
+  ('0' + ((SIZE / 10000)%10)),
+  ('0' + ((SIZE / 1000)%10)),
+  ('0' + ((SIZE / 100)%10)),
+  ('0' + ((SIZE / 10)%10)),
+  ('0' +  (SIZE    % 10)),
+  ']',
+#ifdef KEY
+  ' ','k','e','y','[', KEY, ']',
+#endif
+  '\0'};
+
+#ifdef __CLASSIC_C__
+int main(argc, argv) int argc; char *argv[];
+#else
+int main(int argc, char *argv[])
+#endif
+{
+  int require = 0;
+  require += info_size[argc];
+  (void)argv;
+  return require;
+}
+
+
+Determining if the function dladdr exists failed with the following output:
+Change Dir: H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/MinGW/bin/mingw32-make.exe cmTC_8d703/fast && F:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_8d703.dir\build.make CMakeFiles/cmTC_8d703.dir/build
+mingw32-make.exe[1]: Entering directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8d703.dir/CheckFunctionExists.c.obj
+F:\MinGW\bin\gcc.exe   -DCHECK_FUNCTION_EXISTS=dladdr   -o CMakeFiles\cmTC_8d703.dir\CheckFunctionExists.c.obj   -c "F:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\share\cmake-3.16\Modules\CheckFunctionExists.c"
+Linking C executable cmTC_8d703.exe
+"F:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_8d703.dir\link.txt --verbose=1
+"F:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_8d703.dir/objects.a
+F:\MinGW\bin\ar.exe cr CMakeFiles\cmTC_8d703.dir/objects.a @CMakeFiles\cmTC_8d703.dir\objects1.rsp
+F:\MinGW\bin\gcc.exe  -DCHECK_FUNCTION_EXISTS=dladdr    -Wl,--whole-archive CMakeFiles\cmTC_8d703.dir/objects.a -Wl,--no-whole-archive  -o cmTC_8d703.exe -Wl,--out-implib,libcmTC_8d703.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_8d703.dir\linklibs.rsp
+f:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: CMakeFiles\cmTC_8d703.dir/objects.a(CheckFunctionExists.c.obj):CheckFunctionExists.c:(.text+0xc): undefined reference to `dladdr'
+collect2.exe: error: ld returned 1 exit status
+CMakeFiles\cmTC_8d703.dir\build.make:87: recipe for target 'cmTC_8d703.exe' failed
+mingw32-make.exe[1]: *** [cmTC_8d703.exe] Error 1
+mingw32-make.exe[1]: Leaving directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:120: recipe for target 'cmTC_8d703/fast' failed
+mingw32-make.exe: *** [cmTC_8d703/fast] Error 2
+
+
+
+Determining if the function fcntl exists failed with the following output:
+Change Dir: H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/MinGW/bin/mingw32-make.exe cmTC_a7368/fast && F:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_a7368.dir\build.make CMakeFiles/cmTC_a7368.dir/build
+mingw32-make.exe[1]: Entering directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a7368.dir/CheckFunctionExists.c.obj
+F:\MinGW\bin\gcc.exe   -DCHECK_FUNCTION_EXISTS=fcntl   -o CMakeFiles\cmTC_a7368.dir\CheckFunctionExists.c.obj   -c "F:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\share\cmake-3.16\Modules\CheckFunctionExists.c"
+Linking C executable cmTC_a7368.exe
+"F:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_a7368.dir\link.txt --verbose=1
+"F:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_a7368.dir/objects.a
+F:\MinGW\bin\ar.exe cr CMakeFiles\cmTC_a7368.dir/objects.a @CMakeFiles\cmTC_a7368.dir\objects1.rsp
+F:\MinGW\bin\gcc.exe  -DCHECK_FUNCTION_EXISTS=fcntl    -Wl,--whole-archive CMakeFiles\cmTC_a7368.dir/objects.a -Wl,--no-whole-archive  -o cmTC_a7368.exe -Wl,--out-implib,libcmTC_a7368.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_a7368.dir\linklibs.rsp
+f:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: CMakeFiles\cmTC_a7368.dir/objects.a(CheckFunctionExists.c.obj):CheckFunctionExists.c:(.text+0xc): undefined reference to `fcntl'
+collect2.exe: error: ld returned 1 exit status
+CMakeFiles\cmTC_a7368.dir\build.make:87: recipe for target 'cmTC_a7368.exe' failed
+mingw32-make.exe[1]: *** [cmTC_a7368.exe] Error 1
+mingw32-make.exe[1]: Leaving directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:120: recipe for target 'cmTC_a7368/fast' failed
+mingw32-make.exe: *** [cmTC_a7368/fast] Error 2
+
+
+
+Determining if the function pread exists failed with the following output:
+Change Dir: H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/MinGW/bin/mingw32-make.exe cmTC_5f351/fast && F:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_5f351.dir\build.make CMakeFiles/cmTC_5f351.dir/build
+mingw32-make.exe[1]: Entering directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5f351.dir/CheckFunctionExists.c.obj
+F:\MinGW\bin\gcc.exe   -DCHECK_FUNCTION_EXISTS=pread   -o CMakeFiles\cmTC_5f351.dir\CheckFunctionExists.c.obj   -c "F:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\share\cmake-3.16\Modules\CheckFunctionExists.c"
+Linking C executable cmTC_5f351.exe
+"F:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_5f351.dir\link.txt --verbose=1
+"F:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_5f351.dir/objects.a
+F:\MinGW\bin\ar.exe cr CMakeFiles\cmTC_5f351.dir/objects.a @CMakeFiles\cmTC_5f351.dir\objects1.rsp
+F:\MinGW\bin\gcc.exe  -DCHECK_FUNCTION_EXISTS=pread    -Wl,--whole-archive CMakeFiles\cmTC_5f351.dir/objects.a -Wl,--no-whole-archive  -o cmTC_5f351.exe -Wl,--out-implib,libcmTC_5f351.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_5f351.dir\linklibs.rsp
+f:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: CMakeFiles\cmTC_5f351.dir/objects.a(CheckFunctionExists.c.obj):CheckFunctionExists.c:(.text+0xc): undefined reference to `pread'
+collect2.exe: error: ld returned 1 exit status
+CMakeFiles\cmTC_5f351.dir\build.make:87: recipe for target 'cmTC_5f351.exe' failed
+mingw32-make.exe[1]: *** [cmTC_5f351.exe] Error 1
+mingw32-make.exe[1]: Leaving directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:120: recipe for target 'cmTC_5f351/fast' failed
+mingw32-make.exe: *** [cmTC_5f351/fast] Error 2
+
+
+
+Determining if the function pwrite exists failed with the following output:
+Change Dir: H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/MinGW/bin/mingw32-make.exe cmTC_8e83c/fast && F:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_8e83c.dir\build.make CMakeFiles/cmTC_8e83c.dir/build
+mingw32-make.exe[1]: Entering directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8e83c.dir/CheckFunctionExists.c.obj
+F:\MinGW\bin\gcc.exe   -DCHECK_FUNCTION_EXISTS=pwrite   -o CMakeFiles\cmTC_8e83c.dir\CheckFunctionExists.c.obj   -c "F:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\share\cmake-3.16\Modules\CheckFunctionExists.c"
+Linking C executable cmTC_8e83c.exe
+"F:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_8e83c.dir\link.txt --verbose=1
+"F:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_8e83c.dir/objects.a
+F:\MinGW\bin\ar.exe cr CMakeFiles\cmTC_8e83c.dir/objects.a @CMakeFiles\cmTC_8e83c.dir\objects1.rsp
+F:\MinGW\bin\gcc.exe  -DCHECK_FUNCTION_EXISTS=pwrite    -Wl,--whole-archive CMakeFiles\cmTC_8e83c.dir/objects.a -Wl,--no-whole-archive  -o cmTC_8e83c.exe -Wl,--out-implib,libcmTC_8e83c.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_8e83c.dir\linklibs.rsp
+f:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: CMakeFiles\cmTC_8e83c.dir/objects.a(CheckFunctionExists.c.obj):CheckFunctionExists.c:(.text+0xc): undefined reference to `pwrite'
+collect2.exe: error: ld returned 1 exit status
+CMakeFiles\cmTC_8e83c.dir\build.make:87: recipe for target 'cmTC_8e83c.exe' failed
+mingw32-make.exe[1]: *** [cmTC_8e83c.exe] Error 1
+mingw32-make.exe[1]: Leaving directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:120: recipe for target 'cmTC_8e83c/fast' failed
+mingw32-make.exe: *** [cmTC_8e83c/fast] Error 2
+
+
+
+Determining if the function sigaction exists failed with the following output:
+Change Dir: H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/MinGW/bin/mingw32-make.exe cmTC_b365e/fast && F:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_b365e.dir\build.make CMakeFiles/cmTC_b365e.dir/build
+mingw32-make.exe[1]: Entering directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b365e.dir/CheckFunctionExists.c.obj
+F:\MinGW\bin\gcc.exe   -DCHECK_FUNCTION_EXISTS=sigaction   -o CMakeFiles\cmTC_b365e.dir\CheckFunctionExists.c.obj   -c "F:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\share\cmake-3.16\Modules\CheckFunctionExists.c"
+Linking C executable cmTC_b365e.exe
+"F:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_b365e.dir\link.txt --verbose=1
+"F:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_b365e.dir/objects.a
+F:\MinGW\bin\ar.exe cr CMakeFiles\cmTC_b365e.dir/objects.a @CMakeFiles\cmTC_b365e.dir\objects1.rsp
+F:\MinGW\bin\gcc.exe  -DCHECK_FUNCTION_EXISTS=sigaction    -Wl,--whole-archive CMakeFiles\cmTC_b365e.dir/objects.a -Wl,--no-whole-archive  -o cmTC_b365e.exe -Wl,--out-implib,libcmTC_b365e.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_b365e.dir\linklibs.rsp
+f:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: CMakeFiles\cmTC_b365e.dir/objects.a(CheckFunctionExists.c.obj):CheckFunctionExists.c:(.text+0xc): undefined reference to `sigaction'
+collect2.exe: error: ld returned 1 exit status
+CMakeFiles\cmTC_b365e.dir\build.make:87: recipe for target 'cmTC_b365e.exe' failed
+mingw32-make.exe[1]: *** [cmTC_b365e.exe] Error 1
+mingw32-make.exe[1]: Leaving directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:120: recipe for target 'cmTC_b365e/fast' failed
+mingw32-make.exe: *** [cmTC_b365e/fast] Error 2
+
+
+
+Determining if the function sigaltstack exists failed with the following output:
+Change Dir: H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/MinGW/bin/mingw32-make.exe cmTC_9bbc6/fast && F:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_9bbc6.dir\build.make CMakeFiles/cmTC_9bbc6.dir/build
+mingw32-make.exe[1]: Entering directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9bbc6.dir/CheckFunctionExists.c.obj
+F:\MinGW\bin\gcc.exe   -DCHECK_FUNCTION_EXISTS=sigaltstack   -o CMakeFiles\cmTC_9bbc6.dir\CheckFunctionExists.c.obj   -c "F:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\share\cmake-3.16\Modules\CheckFunctionExists.c"
+Linking C executable cmTC_9bbc6.exe
+"F:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_9bbc6.dir\link.txt --verbose=1
+"F:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_9bbc6.dir/objects.a
+F:\MinGW\bin\ar.exe cr CMakeFiles\cmTC_9bbc6.dir/objects.a @CMakeFiles\cmTC_9bbc6.dir\objects1.rsp
+F:\MinGW\bin\gcc.exe  -DCHECK_FUNCTION_EXISTS=sigaltstack    -Wl,--whole-archive CMakeFiles\cmTC_9bbc6.dir/objects.a -Wl,--no-whole-archive  -o cmTC_9bbc6.exe -Wl,--out-implib,libcmTC_9bbc6.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_9bbc6.dir\linklibs.rsp
+f:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: CMakeFiles\cmTC_9bbc6.dir/objects.a(CheckFunctionExists.c.obj):CheckFunctionExists.c:(.text+0xc): undefined reference to `sigaltstack'
+collect2.exe: error: ld returned 1 exit status
+CMakeFiles\cmTC_9bbc6.dir\build.make:87: recipe for target 'cmTC_9bbc6.exe' failed
+mingw32-make.exe[1]: *** [cmTC_9bbc6.exe] Error 1
+mingw32-make.exe[1]: Leaving directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:120: recipe for target 'cmTC_9bbc6/fast' failed
+mingw32-make.exe: *** [cmTC_9bbc6/fast] Error 2
+
+
+
+Performing C++ SOURCE FILE Test HAVE_NO_UNNAMED_TYPE_TEMPLATE_ARGS failed with the following output:
+Change Dir: H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/MinGW/bin/mingw32-make.exe cmTC_9c1ab/fast && F:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_9c1ab.dir\build.make CMakeFiles/cmTC_9c1ab.dir/build
+mingw32-make.exe[1]: Entering directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_9c1ab.dir/src.cxx.obj
+F:\MinGW\bin\g++.exe    -DHAVE_NO_UNNAMED_TYPE_TEMPLATE_ARGS   -Wunnamed-type-template-args -o CMakeFiles\cmTC_9c1ab.dir\src.cxx.obj -c H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CMakeTmp\src.cxx
+g++.exe: error: unrecognized command line option '-Wunnamed-type-template-args'
+CMakeFiles\cmTC_9c1ab.dir\build.make:64: recipe for target 'CMakeFiles/cmTC_9c1ab.dir/src.cxx.obj' failed
+mingw32-make.exe[1]: *** [CMakeFiles/cmTC_9c1ab.dir/src.cxx.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:120: recipe for target 'cmTC_9c1ab/fast' failed
+mingw32-make.exe: *** [cmTC_9c1ab/fast] Error 2
+
+
+Source file was:
+int main() { return 0; }
+Determining if the pthread_threadid_np exist failed with the following output:
+Change Dir: H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/MinGW/bin/mingw32-make.exe cmTC_170e7/fast && F:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_170e7.dir\build.make CMakeFiles/cmTC_170e7.dir/build
+mingw32-make.exe[1]: Entering directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_170e7.dir/CheckSymbolExists.cxx.obj
+F:\MinGW\bin\g++.exe    -std=gnu++17 -o CMakeFiles\cmTC_170e7.dir\CheckSymbolExists.cxx.obj -c H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CMakeTmp\CheckSymbolExists.cxx
+H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CMakeTmp\CheckSymbolExists.cxx:2:10: fatal error: pthread.h: No such file or directory
+    2 | #include <pthread.h>
+      |          ^~~~~~~~~~~
+compilation terminated.
+CMakeFiles\cmTC_170e7.dir\build.make:64: recipe for target 'CMakeFiles/cmTC_170e7.dir/CheckSymbolExists.cxx.obj' failed
+mingw32-make.exe[1]: *** [CMakeFiles/cmTC_170e7.dir/CheckSymbolExists.cxx.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:120: recipe for target 'cmTC_170e7/fast' failed
+mingw32-make.exe: *** [cmTC_170e7/fast] Error 2
+
+
+File H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_threadid_np
+  return ((int*)(&pthread_threadid_np))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the function UnDecorateSymbolName exists in the dbghelp failed with the following output:
+Change Dir: H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/MinGW/bin/mingw32-make.exe cmTC_89dcd/fast && F:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_89dcd.dir\build.make CMakeFiles/cmTC_89dcd.dir/build
+mingw32-make.exe[1]: Entering directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_89dcd.dir/CheckFunctionExists.c.obj
+F:\MinGW\bin\gcc.exe   -DCHECK_FUNCTION_EXISTS=UnDecorateSymbolName   -o CMakeFiles\cmTC_89dcd.dir\CheckFunctionExists.c.obj   -c "F:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\share\cmake-3.16\Modules\CheckFunctionExists.c"
+Linking C executable cmTC_89dcd.exe
+"F:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_89dcd.dir\link.txt --verbose=1
+"F:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_89dcd.dir/objects.a
+F:\MinGW\bin\ar.exe cr CMakeFiles\cmTC_89dcd.dir/objects.a @CMakeFiles\cmTC_89dcd.dir\objects1.rsp
+F:\MinGW\bin\gcc.exe  -DCHECK_FUNCTION_EXISTS=UnDecorateSymbolName    -Wl,--whole-archive CMakeFiles\cmTC_89dcd.dir/objects.a -Wl,--no-whole-archive  -o cmTC_89dcd.exe -Wl,--out-implib,libcmTC_89dcd.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_89dcd.dir\linklibs.rsp
+f:/mingw/bin/../lib/gcc/mingw32/9.2.0/../../../../mingw32/bin/ld.exe: cannot find -ldbghelp
+collect2.exe: error: ld returned 1 exit status
+CMakeFiles\cmTC_89dcd.dir\build.make:87: recipe for target 'cmTC_89dcd.exe' failed
+mingw32-make.exe[1]: *** [cmTC_89dcd.exe] Error 1
+mingw32-make.exe[1]: Leaving directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:120: recipe for target 'cmTC_89dcd/fast' failed
+mingw32-make.exe: *** [cmTC_89dcd/fast] Error 2
+
+
+
+Performing C++ SOURCE FILE Test HAVE_RWLOCK failed with the following output:
+Change Dir: H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/MinGW/bin/mingw32-make.exe cmTC_edb54/fast && F:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_edb54.dir\build.make CMakeFiles/cmTC_edb54.dir/build
+mingw32-make.exe[1]: Entering directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_edb54.dir/src.cxx.obj
+F:\MinGW\bin\g++.exe    -DHAVE_RWLOCK   -o CMakeFiles\cmTC_edb54.dir\src.cxx.obj -c H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CMakeTmp\src.cxx
+H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CMakeTmp\src.cxx:3:10: fatal error: pthread.h: No such file or directory
+    3 | #include <pthread.h>
+      |          ^~~~~~~~~~~
+compilation terminated.
+CMakeFiles\cmTC_edb54.dir\build.make:64: recipe for target 'CMakeFiles/cmTC_edb54.dir/src.cxx.obj' failed
+mingw32-make.exe[1]: *** [CMakeFiles/cmTC_edb54.dir/src.cxx.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:120: recipe for target 'cmTC_edb54/fast' failed
+mingw32-make.exe: *** [cmTC_edb54/fast] Error 2
+
+
+Source file was:
+
+#define _XOPEN_SOURCE 500
+#include <pthread.h>
+int main(void)
+{
+  pthread_rwlock_t l;
+  pthread_rwlock_init(&l, NULL);
+  pthread_rwlock_rdlock(&l);
+  return 0;
+}
+
+Performing C++ SOURCE FILE Test STL_NO_NAMESPACE failed with the following output:
+Change Dir: H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/MinGW/bin/mingw32-make.exe cmTC_e56ff/fast && F:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_e56ff.dir\build.make CMakeFiles/cmTC_e56ff.dir/build
+mingw32-make.exe[1]: Entering directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_e56ff.dir/src.cxx.obj
+F:\MinGW\bin\g++.exe    -DSTL_NO_NAMESPACE   -o CMakeFiles\cmTC_e56ff.dir\src.cxx.obj -c H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CMakeTmp\src.cxx
+H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CMakeTmp\src.cxx:3:1: error: 'vector' does not name a type
+    3 | vector<int> t; int main() { }
+      | ^~~~~~
+CMakeFiles\cmTC_e56ff.dir\build.make:64: recipe for target 'CMakeFiles/cmTC_e56ff.dir/src.cxx.obj' failed
+mingw32-make.exe[1]: *** [CMakeFiles/cmTC_e56ff.dir/src.cxx.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:120: recipe for target 'cmTC_e56ff/fast' failed
+mingw32-make.exe: *** [cmTC_e56ff/fast] Error 2
+
+
+Source file was:
+
+#include <vector>
+vector<int> t; int main() { }
+
+Performing C++ SOURCE FILE Test HAVE_SYMBOLIZE failed with the following output:
+Change Dir: H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/MinGW/bin/mingw32-make.exe cmTC_966bb/fast && F:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_966bb.dir\build.make CMakeFiles/cmTC_966bb.dir/build
+mingw32-make.exe[1]: Entering directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_966bb.dir/src.cxx.obj
+F:\MinGW\bin\g++.exe    -DHAVE_SYMBOLIZE   -std=gnu++17 -o CMakeFiles\cmTC_966bb.dir\src.cxx.obj -c H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CMakeTmp\src.cxx
+H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CMakeTmp\src.cxx:2:14: fatal error: dbghelp.h: No such file or directory
+    2 |     #include <dbghelp.h>
+      |              ^~~~~~~~~~~
+compilation terminated.
+CMakeFiles\cmTC_966bb.dir\build.make:64: recipe for target 'CMakeFiles/cmTC_966bb.dir/src.cxx.obj' failed
+mingw32-make.exe[1]: *** [CMakeFiles/cmTC_966bb.dir/src.cxx.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:120: recipe for target 'cmTC_966bb/fast' failed
+mingw32-make.exe: *** [cmTC_966bb/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+    #include <windows.h>
+    #include <dbghelp.h>
+    #include <cstdlib>
+
+    void foobar() { }
+
+    int main()
+    {
+        HANDLE process = GetCurrentProcess();
+
+        if (!SymInitialize(process, NULL, TRUE))
+            return EXIT_FAILURE;
+
+        char buf[sizeof(SYMBOL_INFO) + MAX_SYM_NAME];
+        SYMBOL_INFO *symbol = reinterpret_cast<SYMBOL_INFO *>(buf);
+        symbol->SizeOfStruct = sizeof(SYMBOL_INFO);
+        symbol->MaxNameLen = MAX_SYM_NAME;
+
+        void* const pc = reinterpret_cast<void*>(&foobar);
+        BOOL ret = SymFromAddr(process, reinterpret_cast<DWORD64>(pc), 0, symbol);
+
+        return ret ? EXIT_SUCCESS : EXIT_FAILURE;
+    }
+    
+Performing C++ SOURCE FILE Test HAVE_LOCALTIME_R failed with the following output:
+Change Dir: H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):F:/MinGW/bin/mingw32-make.exe cmTC_f6dcf/fast && F:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_f6dcf.dir\build.make CMakeFiles/cmTC_f6dcf.dir/build
+mingw32-make.exe[1]: Entering directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_f6dcf.dir/src.cxx.obj
+F:\MinGW\bin\g++.exe    -DHAVE_LOCALTIME_R   -o CMakeFiles\cmTC_f6dcf.dir\src.cxx.obj -c H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CMakeTmp\src.cxx
+H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CMakeTmp\src.cxx: In function 'int main()':
+H:\Code\dragonfly\cmake-build-debug\CMakeFiles\CMakeTmp\src.cxx:8:5: error: 'localtime_r' was not declared in this scope; did you mean 'localtime'?
+    8 |     localtime_r(&timep, &result);
+      |     ^~~~~~~~~~~
+      |     localtime
+CMakeFiles\cmTC_f6dcf.dir\build.make:64: recipe for target 'CMakeFiles/cmTC_f6dcf.dir/src.cxx.obj' failed
+mingw32-make.exe[1]: *** [CMakeFiles/cmTC_f6dcf.dir/src.cxx.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'H:/Code/dragonfly/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:120: recipe for target 'cmTC_f6dcf/fast' failed
+mingw32-make.exe: *** [cmTC_f6dcf/fast] Error 2
+
+
+Source file was:
+
+#include <cstdlib>
+#include <ctime>
+int main()
+{
+    time_t timep;
+    struct tm result;
+    localtime_r(&timep, &result);
+    return EXIT_SUCCESS;
+}
+
