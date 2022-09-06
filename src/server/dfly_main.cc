@@ -305,6 +305,7 @@ Usage: dragonfly [FLAGS]
   uring::UringPool pp{1024};
 
   // 运行 io_uring pool
+  // UringPool -> ProactorPool，这里的run方法运行的是 proactor_pool.cc 中的Run()方法
   pp.Run();
 
   AcceptServer acceptor(&pp);
